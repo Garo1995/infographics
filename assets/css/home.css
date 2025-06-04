@@ -98,6 +98,57 @@ p{
     height: 57px;
     z-index: 2;
 }
+.marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.marquee-track {
+    display: flex;
+    animation: scrollLinear 10s linear infinite;
+}
+
+.marquee-item {
+    flex: 0 0 auto;
+    width: 16.66%; /* 6 карточек */
+    margin-right: 24px;
+}
+
+.marquee-item img {
+    width: 100%;
+    display: block;
+}
+
+@keyframes scrollLinear {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 1199px) {
+    .marquee-item {
+        width: 20%;
+    }
+}
+@media (max-width: 1020px) {
+    .marquee-item {
+        width: 33.333333%;
+
+    }
+    .marquee-track {
+        animation: scrollLinear 7s linear infinite;
+    }
+}
+@media (max-width: 600px) {
+    .marquee-item {
+        width: 50%;
+    }
+}
+
+
 .product-cards-slider{
     position: relative;
 }
@@ -295,20 +346,32 @@ p{
     margin-top: 5px;
 }
 .category-cnt{
-    max-width: 1440px;
     width: 100%;
     margin: 48px auto;
-
 }
+
+.scroll-gallery {
+    overflow: hidden;
+    position: relative;
+}
+
+
+.scroll-gallery__track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+    padding: 60px;
+    will-change: transform;
+}
+
+
+
 .category-photo{
     max-width: 282px;
     width: 100%;
     margin: 0 auto;
 }
 
-.pin-spacer{
-    padding: 0!important;
-}
 
 .advantages-main{
     background: #FFFFFF;
@@ -347,6 +410,9 @@ p{
     width: 100%;
     border-radius: 20px;
 
+}
+.swiper-container-free-mode > .swiper-wrapper {
+    transition-timing-function: linear;
 }
 
 .product-mobile-title{
@@ -595,7 +661,6 @@ p{
     background: #2E2E2E;
     max-width: 380px;
     width: 100%;
-    height: 201px;
     border-radius: 20px;
     padding: 20px;
 }
@@ -704,7 +769,7 @@ p{
     justify-content: space-between;
     padding: 20px 18px 20px 24px;
     cursor: pointer;
-    gap: 20px;
+    gap: 14px;
 }
 .accordion-click h3{
     font-weight: 400;
@@ -755,7 +820,9 @@ p{
     display: none;
     padding: 0 24px 18px;
 }
-
+.submenu p{
+    font-size: 16px;
+}
 
 .card-creation-main{
     background: linear-gradient(263.61deg, #B555FF 0%, #7E2FBB 52.88%, #642397 100%);

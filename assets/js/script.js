@@ -66,17 +66,22 @@ $('.menu-scroll a').click(function() {
     }
 });
 
-
+const track = document.getElementById('marqueeTrack');
+const items = track.children;
+const clone = track.cloneNode(true);
+track.append(...clone.children);
 
 let productSwiper = new Swiper(".product-cards-slider", {
-    slidesPerView: 6,
-    spaceBetween: 24,
+    slidesPerView: 'auto',
     loop: true,
-    speed: 1200,
+    freeMode: true,
+    freeModeMomentum: false,
     autoplay: {
-        delay: 1500,
+        delay: 0,
         disableOnInteraction: false,
     },
+    speed: 4000,
+    allowTouchMove: false,
     breakpoints: {
         '1500': {
             slidesPerView: 6,
