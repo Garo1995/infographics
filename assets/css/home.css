@@ -345,10 +345,30 @@ p{
     text-align: center;
     margin-top: 5px;
 }
-.category-cnt{
-    width: 100%;
-    margin: 48px auto;
+
+.cards-container {
+    overflow: hidden;
+    margin: 48px 0;
 }
+
+.cards-wrapper {
+    display: flex;
+    gap: 24px;
+    transform: translateX(0px);
+    justify-content: center;
+    transition: transform 0.05s linear;
+}
+
+.card {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+
 
 .scroll-gallery {
     overflow: hidden;
@@ -366,11 +386,6 @@ p{
 
 
 
-.category-photo{
-    max-width: 282px;
-    width: 100%;
-    margin: 0 auto;
-}
 
 
 .advantages-main{
@@ -910,9 +925,7 @@ footer-policy{
         padding: 60px 0;
         border-radius: 20px;
     }
-    .category-cnt {
-        padding-left: 16px;
-    }
+
     .product-cards-rel:before {
         height: 53px;
         background-position: center;
@@ -990,9 +1003,15 @@ footer-policy{
     .loading-data {
         width: calc(33.333333% - 8px);
     }
-
-
-
+    .cards-wrapper {
+        gap: 12px;
+    }
+    .cards-container {
+        margin: 24px 0;
+    }
+    .card{
+        flex: 0 0 calc(100vw / 5);
+    }
 }
 
 @media (max-width: 1020px){
@@ -1038,9 +1057,7 @@ footer-policy{
     .can-network-box:nth-child(even) {
         flex-direction: column-reverse;
     }
-    .category-cnt {
-        margin: 24px auto;
-    }
+
     .loading-data-flex {
         flex-wrap: wrap;
         justify-content: center;
@@ -1225,6 +1242,9 @@ footer-policy{
     .card-creation-cnt h3 {
         max-width: 320px;
     }
+    .card{
+        flex: 0 0 calc(100vw / 3);
+    }
 
 }
 @media (max-width: 575px){
@@ -1249,12 +1269,8 @@ footer-policy{
     .product-cards-slider{
         width: 540px;
     }
-    .category-cnt{
-        overflow: hidden;
-    }
-    .category-slider{
-        width: 400px;
-    }
+
+
     .online-editor-box {
         gap: 2px;
         padding: 2px 3px;
@@ -1283,6 +1299,9 @@ footer-policy{
     }
     .how-works-fon p {
         font-size: 8px;
+    }
+    .card{
+        flex: 0 0 calc(100vw / 3);
     }
 }
 @media (max-width: 355px){
